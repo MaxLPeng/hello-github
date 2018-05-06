@@ -175,7 +175,7 @@ $ git checkout v0.2.0
 Switched to branch 'v0.2.0'  
 $ git branch  
   master  
-* v0.2.0  
+\* v0.2.0  
 
 $ vim helloGit.txt  
 $ cat helloGit.txt  
