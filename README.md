@@ -1,9 +1,9 @@
-这是个使用github的实验  
-  
+这是个使用github的实验
+
 ############################################  
-█初始化  
+#  初始化  
 ############################################  
-1) web side 
+1)  web side  
   => Your profile=>Repositories=>New=>Repository name
 
 2) 本地目录下  
@@ -18,7 +18,7 @@ $ git remote add origin https://github.com/MaxLPeng/hello-github.git
 $ git push -u origin master  
  
 ############################################  
-█增、删、改、撤消  
+#  增、删、改、撤消  
 ############################################  
 █添加 文件  
 $ vim c.txt  
@@ -98,7 +98,7 @@ $ git revert --continue
 $ git push  
 
 ############################################  
-█冲突解决  
+#  冲突解决  
 ############################################  
 █方式1 (pull->修改冲突->commit->push)  
 $ cat helloGit-two.txt  
@@ -121,7 +121,7 @@ point 11(add by local side)
   
 =======  
 point D (add by web side)  
-/>>>>>>> 0cf4bb7afcafb76db3499968514b38aa23610a2e  
+\>>>>>>> 0cf4bb7afcafb76db3499968514b38aa23610a2e  
 
 $ vim helloGit-two.txt  
 ....  
@@ -155,5 +155,35 @@ $ git push
 $ git pull 
 $ git stash clear
 
+############################################  
+#  标签  
+############################################  
+查看 git tag  
+标记 git tag -a v0.1.0 -m "release 0.1.0 version"  
+删除 git tag -d v0.1.0  
+补打 git tag -a v0.1.0 49e0cd22f6bd9510fe65084e023d9c4316b446a6  
+发布 git push origin v0.1.0  
+切换 git checkout v0.1.0  
 
+############################################  
+#  分支  
+############################################  
+█创建  
+$ git branch v0.2.0  
+█切换  
+$ git checkout v0.2.0  
+Switched to branch 'v0.2.0'  
+$ git branch  
+  master  
+* v0.2.0  
+
+$ vim helloGit.txt  
+$ cat helloGit.txt  
+......  
+branch add 1  
+branch add 2  
+$ git add .  
+$ git commit -m "v020 add 1-1"  
+█提交  
+$ git push origin v0.2.0  
 
