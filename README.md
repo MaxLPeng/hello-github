@@ -1,5 +1,20 @@
 这是个使用github的实验
 
+
+////////////////////////////////////////////   
+//           tool 比较 
+////////////////////////////////////////////  
+█注册
+git config --global diff.tool bc3
+git config --global difftool.bc3.path "C:\Program Files (x86)\Beyond Compare 3/BCompare.exe"
+
+█调用
+查看当前目录
+git difftool ./  
+比较filename文件  
+git difftool filename  
+
+
 ////////////////////////////////////////////      
 //           初始化  
 ////////////////////////////////////////////      
@@ -168,22 +183,58 @@ $ git stash clear
 ////////////////////////////////////////////      
 //           分支  
 ////////////////////////////////////////////      
-█创建  
-$ git branch v0.2.0  
-█切换  
-$ git checkout v0.2.0  
-Switched to branch 'v0.2.0'  
+█创建分支dev  
+$ git checkout -b dev  
+查看  
 $ git branch  
+\* dev  
   master  
-\* v0.2.0  
-
+$ cat helloGit.txt  
+...  
+line 5 (add on web)  
+修改文件  
 $ vim helloGit.txt  
 $ cat helloGit.txt  
-......  
-branch add 1  
-branch add 2  
+...  
+line 5 (add on web)  
+line 1111 (add by branch dev)  
+  
+█提交分支  
 $ git add .  
-$ git commit -m "v020 add 1-1"  
-█提交  
-$ git push origin v0.2.0  
+$ git commit -m "by -b dev"   
+$ git push origin dev  
+  
+█完成任务后，准备合并  
+█切换到主分支  
+$ git checkout master  
+
+█合并  
+$ git merge dev  
+Updating eb8d9a3..97d6c79  
+Fast-forward  
+ helloGit.txt | 2 +-  
+ 1 file changed, 1 insertion(+), 1 deletion(-)  
+查看  
+$ cat helloGit.txt  
+...  
+line 5 (add on web)  
+line 1111 (add by branch dev)  
+
+█删除分支  
+$ git branch -d dev  
+$ git branch  
+\* master  
+$ git push origin master  
+
+查看所有  
+$ git branch -a  
+\* master 
+  remotes/origin/dev  
+  remotes/origin/master  
+
+█删除远程分支  
+$ git push origin :dev  
+To https://github.com/MaxLPeng/hello-github.git  
+ - [deleted]         dev  
+
 
