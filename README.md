@@ -2,14 +2,14 @@
 
 
 ////////////////////////////////////////////   
-//           tool 比较 
+//           tool 比较  
 ////////////////////////////////////////////  
-█注册
-git config --global diff.tool bc3
-git config --global difftool.bc3.path "C:\Program Files (x86)\Beyond Compare 3/BCompare.exe"
+█注册  
+git config --global diff.tool bc3  
+git config --global difftool.bc3.path "C:\Program Files (x86)\Beyond Compare 3/BCompare.exe"  
 
-█调用
-查看当前目录
+█调用  
+查看当前目录  
 git difftool ./  
 比较filename文件  
 git difftool filename  
