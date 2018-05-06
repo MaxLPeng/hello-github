@@ -121,7 +121,7 @@ point 11(add by local side)
   
 =======  
 point D (add by web side)  
->>>>>>> 0cf4bb7afcafb76db3499968514b38aa23610a2e  
+/>>>>>>> 0cf4bb7afcafb76db3499968514b38aa23610a2e  
 
 $ vim helloGit-two.txt  
 ....  
